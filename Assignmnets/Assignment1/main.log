@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.6)  11 APR 2025 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.6)  11 APR 2025 12:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -215,13 +215,19 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 68.
 
-Overfull \hbox (7.99081pt too wide) in paragraph at lines 67--70
+Overfull \hbox (25.70879pt too wide) in paragraph at lines 66--70
+[]\OT1/cmr/m/n/10 This mod-ule is com-monly used in dig-i-tal com-mu-ni-ca-tion
+ sys-tems for ba-sic er-ror de-tec-tion. For codes,testbenches
+ []
+
+
+Overfull \hbox (7.99081pt too wide) in paragraph at lines 66--70
 \OT1/cmtt/m/n/10 https : / / github . com / ArnavYadnopavit / DigitalSystemLabE
 E1501 / tree / main / Assignmnets / Assignment1$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--70
+Underfull \hbox (badness 10000) in paragraph at lines 66--70
 
  []
 
@@ -241,7 +247,7 @@ Here is how much of TeX's memory you used:
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (2 pages, 98245 bytes).
+Output written on main.pdf (2 pages, 98265 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream
