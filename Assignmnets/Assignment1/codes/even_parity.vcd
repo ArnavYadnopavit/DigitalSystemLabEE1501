@@ -1,0 +1,50 @@
+$date
+	Fri Apr 11 11:02:14 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module even_parity_tb $end
+$var wire 1 ! parity $end
+$var reg 8 " data [7:0] $end
+$scope module uut $end
+$var wire 8 # data [7:0] $end
+$var wire 1 ! parity $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 #
+b0 "
+1!
+$end
+#10000
+0!
+b1 "
+b1 #
+#20000
+1!
+b1111 "
+b1111 #
+#30000
+b10101010 "
+b10101010 #
+#40000
+b11111111 "
+b11111111 #
+#50000
+0!
+b11111110 "
+b11111110 #
+#60000
+b10000000 "
+b10000000 #
+#70000
+1!
+b11000000 "
+b11000000 #
+#80000

@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  language=Verilog
+}
+
+\title{Assignment1}
+\author{Arnav Yadnopavit}
+\date{April 2025}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Code 1}
+\lstinputlisting{codes/1.v}
+
+\section*{Explanation 1}
+This module implements a 4-to-2 priority encoder using the \texttt{casez} statement in Verilog. It accepts a 4-bit input signal named \texttt{in}, and produces a 2-bit binary output \texttt{out} and a 1-bit \texttt{valid} signal.
+
+The encoder assigns priority in the order \texttt{in[3]}\textgreater\texttt{in[2]}\textgreater\texttt{in[1]}\textgreater\texttt{in[0]}. That means if multiple inputs are high at the same time, the encoder outputs the position of the highest-order high bit.
+
+The \texttt{casez} statement allows "don’t care" bits (written as \texttt{z}) in pattern matching, which makes it easier to define priority logic. Inside each \texttt{casez} branch, \texttt{out} is assigned a 2-bit binary value corresponding to the position of the high input, and \texttt{valid} is set to 1. If no bits are high, the \texttt{default} case sets \texttt{valid} to 0 and \texttt{out} to 0.
+
+This design is often used in digital circuits where fewer output lines are needed, but input signal priorities must be preserved.
+
+\section*{Code 2}
+\lstinputlisting{codes/2.v}
+
+\section*{Explanation 2}
+This Verilog module generates an even parity bit for an 8-bit input. It has a single input vector \texttt{data[7:0]} and a single output \texttt{parity}.
+
+Even parity ensures that the total number of 1's (including the parity bit itself) is even. To compute this, the code uses the XOR reduction operator \texttt{\^{}data}, which applies XOR across all bits of the input vector. The result of \texttt{\^{}data} is 1 if the number of 1's is odd, and 0 if even.
+
+Then, the result is inverted using \texttt{\~{}} to generate the even parity bit. Thus, if the original data has an odd number of 1's, the parity becomes 1, making the total even. If the original data has an even number of 1's, the parity becomes 0, maintaining even parity.
+
+This module is commonly used in digital communication systems for basic error detection.
+
+\section*{Code 3}
+\lstinputlisting{codes/3.v}
+
+\section*{Explanation 3}
+This module describes a 4-bit up counter with three control inputs: \texttt{clk} (clock), \texttt{reset} (asynchronous reset), and \texttt{enable} (count enable). It produces a 4-bit output \texttt{count}.
+
+The counter behavior is governed by a clock edge using a \texttt{posedge clk} sensitivity. When \texttt{reset} is asserted high, the counter resets to 0. This happens asynchronously on the next positive clock edge.
+
+When \texttt{enable} is high, a \texttt{casez} block checks the current value of \texttt{count} and updates it to the next specific value. Unlike a traditional binary counter using \texttt{count <= count + 1}, this implementation manually specifies each state transition using partial bit updates such as \texttt{count[1:0] <= 2'b10} or full assignments like \texttt{count[3:0] <= 4'b1000}.
+
+The \texttt{casez} allows matching specific patterns with don’t care bits (\texttt{z}), making it efficient for conditionally updating parts of the vector.
+
+This approach offers flexibility in defining custom count sequences. It is useful when specific transitions are desired that deviate from normal binary counting, and where control signals like \texttt{enable} and \texttt{reset} must be considered.
+
+\end{document}
+
