@@ -3,6 +3,7 @@
 \usepackage{xcolor}
 \usepackage[margin=1in]{geometry}
 \usepackage{titlesec}
+\usepackage{url}
 \titleformat{\section}{\large\bfseries}{}{0em}{}
 
 \lstset{
@@ -10,9 +11,6 @@
   keywordstyle=\color{blue},
   commentstyle=\color{gray},
   stringstyle=\color{red},
-  numbers=left,
-  numberstyle=\tiny,
-  numbersep=5pt,
   showstringspaces=false,
   breaklines=true,
   frame=single,
@@ -20,7 +18,7 @@
 }
 
 \title{Assignment1}
-\author{Arnav Yadnopavit}
+\author{Arnav Yadnopavit\\EE24BTECH11007}
 \date{April 2025}
 
 \begin{document}
@@ -29,7 +27,7 @@
 
 
 \section*{Code 1}
-\lstinputlisting{codes/1.v}
+\lstinputlisting{codes/1/1.v}
 
 \section*{Explanation 1}
 This module implements a 4-to-2 priority encoder using the \texttt{casez} statement in Verilog. It accepts a 4-bit input signal named \texttt{in}, and produces a 2-bit binary output \texttt{out} and a 1-bit \texttt{valid} signal.
@@ -41,7 +39,7 @@ The \texttt{casez} statement allows "don’t care" bits (written as \texttt{z}) 
 This design is often used in digital circuits where fewer output lines are needed, but input signal priorities must be preserved.
 
 \section*{Code 2}
-\lstinputlisting{codes/2.v}
+\lstinputlisting{codes/2/2.v}
 
 \section*{Explanation 2}
 This Verilog module generates an even parity bit for an 8-bit input. It has a single input vector \texttt{data[7:0]} and a single output \texttt{parity}.
@@ -53,7 +51,7 @@ Then, the result is inverted using \texttt{\~{}} to generate the even parity bit
 This module is commonly used in digital communication systems for basic error detection.
 
 \section*{Code 3}
-\lstinputlisting{codes/3.v}
+\lstinputlisting{codes/3/3.v}
 
 \section*{Explanation 3}
 This module describes a 4-bit up counter with three control inputs: \texttt{clk} (clock), \texttt{reset} (asynchronous reset), and \texttt{enable} (count enable). It produces a 4-bit output \texttt{count}.
@@ -66,5 +64,11 @@ The \texttt{casez} allows matching specific patterns with don’t care bits (\te
 
 This approach offers flexibility in defining custom count sequences. It is useful when specific transitions are desired that deviate from normal binary counting, and where control signals like \texttt{enable} and \texttt{reset} must be considered.
 
+For codes refer to \\
+\url{https://github.com/ArnavYadnopavit/DigitalSystemLabEE1501/tree/main/Assignmnets/Assignment1}
+\\
+
+\centering
+Thank You
 \end{document}
 
